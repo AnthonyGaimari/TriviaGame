@@ -42,7 +42,7 @@ for (var i = 0; i < questions.length; i++) {
 //Quiz starts 
 $(document).ready(function () {
 
-    $("#startGame").click(function () {
+    $("#startGame").on("click", function() {
 
         // setInterval to stop
         intervalID = setInterval(decrement, 1000);
@@ -53,13 +53,13 @@ $(document).ready(function () {
 
         SubmitButton();
 
-        $("#quizDone").click(function () {
+        $("#quizDone").on("click", function() {
             // console.log("clicked!" + showResults);
             showResults();
         });
 
         // function for user pick
-        $("input").click(function () {
+        $("input").on("click", function() {
             userPick[this.name] = this.value;
             //console.log("input" + userPick[this.name]);
         });
@@ -124,3 +124,15 @@ function showResults() {
 
     clearInterval(intervalID);
 }
+
+//USE FOR CLICK FUNCTION ln#'s 45 56 62
+// $("#cat-button").on("click", function() {
+
+//     //Randon cat gif found at this api key
+//     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+
+//     //ajax get method call
+//     $.ajax({
+//       url: queryURL,
+//       method: "GET"
+//     })
